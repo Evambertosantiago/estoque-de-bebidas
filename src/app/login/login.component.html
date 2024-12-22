@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="welcome-section">
+    <h1>Bem-Vindo</h1>
+    <p>ao seu estoque!</p>
+    <button class="register-btn" (click)="cadastro()">CADASTRE-SE</button>
+  </div>
+
+  <div class="login-section">
+    <h2>Faça seu login!</h2>
+    <form>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email">
+      </div>
+
+      <div class="input-group">
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" placeholder="Senha">
+      </div>
+
+      <a routerLink="/cadastro" class="forgot-password">Esqueceu a senha?</a>
+      <button type="submit" class="login-btn">ENTRAR</button>
+    </form>
+  </div>
+</div>
