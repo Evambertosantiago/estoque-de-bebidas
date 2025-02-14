@@ -2,33 +2,33 @@
   <div class="welcome-section">
     <h1>Bem-Vindo</h1>
     <p>ao seu estoque!</p>
-    <button class="login-btn">FAÇA LOGIN</button>
+    <button (click)="click()" class="login-btn">FAÇA LOGIN</button>
   </div>
 
   <div class="register-section">
     <h2>Cadastre-se!</h2>
-    <form>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="input-group">
         <label for="name">Nome Completo</label>
-        <input id="name" type="text" placeholder="Nome Completo">
+        <input id="name" formControlName="username" type="text" placeholder="Nome Completo">
       </div>
 
       <div class="input-group">
         <label for="email">Email</label>
-        <input id="email" type="email" placeholder="Email">
+        <input id="email" formControlName="email" type="email" placeholder="Email">
       </div>
 
       <div class="input-group">
         <label for="password">Senha</label>
-        <input id="password" type="password" placeholder="Senha">
+        <input id="password" formControlName="password" type="password" placeholder="Senha">
       </div>
 
       <div class="input-group">
         <label for="confirm-password">Confirme a Senha</label>
-        <input id="confirm-password" type="password" placeholder="Confirme a Senha">
+        <input id="confirm-password" formControlName="re_password" type="password" placeholder="Confirme a Senha">
       </div>
 
-      <button type="submit" class="register-btn">CADASTRAR</button>
+      <button type="submit" class="register-btn" [disabled]="registerForm.invalid">CADASTRAR</button>
     </form>
   </div>
 </div>
